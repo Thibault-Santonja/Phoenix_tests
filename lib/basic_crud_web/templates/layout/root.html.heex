@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="valentine">
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -9,22 +9,24 @@
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
-  <body>
-    <header>
-      <section class="container">
-        <nav>
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
-          </ul>
-        </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src={Routes.static_path(@conn, "/images/phoenix.png")} alt="Phoenix Framework Logo"/>
-        </a>
-      </section>
-    </header>
-    <%= @inner_content %>
+  <body class="p-4 lg:p-10">
+    <div class="lg:p-10 lg:bg-base-200 rounded-box">
+      <div class="grid grid-cols-1 gap-6 xl:grid-cols-3">
+        <header class="navbar col-span-1 shadow-lg xl:col-span-3 bg-neutral-focus text-neutral-content rounded-box">
+          <a class="flex-none h-16" href="https://phoenixframework.org/">
+            <img style="max-height:2rem;" src={Routes.static_path(@conn, "/images/phoenix.png")} alt="Phoenix Framework Logo"/>
+          </a>
+          <nav class="flex justify-center flex-1 px-2 mx-2">
+            <ul class="items-stretch hidden lg:flex">
+              <li class="btn btn-ghost btn-sm rounded-btn"><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
+              <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
+              <li class="btn btn-ghost btn-sm rounded-btn"><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
+              <% end %>
+            </ul>
+          </nav>
+        </header>
+      </div>
+      <%= @inner_content %>
+    </div>
   </body>
 </html>

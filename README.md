@@ -66,3 +66,20 @@ end
 ```
 - Migrate models `mix ecto.migrate`
 - Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+
+
+## Add tailwind to Phoenix project 
+
+> https://pragmaticstudio.com/tutorials/adding-tailwind-css-to-phoenix
+
+```sh=
+cd assets
+yarn add tailwindcss postcss autoprefixer --save-dev
+cd -
+```
+
+Tailwind for phoenix 
+```sh=
+cd assets
+npx tailwindcss init
+```
