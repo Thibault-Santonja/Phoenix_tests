@@ -20,8 +20,10 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ## Quick start
 
+> https://www.wbotelhos.com/crud-in-5-minutes-with-phoenix-and-elixir
+
 - create Phoenix App
-```sh=
+```shell
 mix phx.new basic_crud
 cd basic_crud
 ```
